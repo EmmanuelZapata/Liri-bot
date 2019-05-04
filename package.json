@@ -1,0 +1,20 @@
+{
+  "name": "Liri-bot",
+  "version": "1.0.0",
+  "description": "Week 10",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EmmanuelZapata/Liri-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EmmanuelZapata/Liri-bot/issues"
+  },
+  "homepage": "https://github.com/EmmanuelZapata/Liri-bot#readme"
+}
