@@ -28,11 +28,19 @@ for (var i=3; i<nodeArgv.length; i++){
 //var song = process.argv[2];
 var command = process.argv[2];
 
+switch(command){
+  case "spotify-this-song":
+  if (x){
+    spotifySong(x);
+  }
+  else {spotifySong("Fear the Reaper");
+  }
+  break;
+}
 
 
-
-
-    spotify.search({ type: 'track', query: songs }, function(err, data) {
+function spotifySong (song) {
+    spotify.search({ type: 'track', query: song}, function(err, data) {
     if (err) {
       return console.log('Error occurred: ' + err);
     }
@@ -42,6 +50,7 @@ var command = process.argv[2];
         console.log("Link: " + data.tracks.items[0].external_urls.spotify);
         console.log("Album: " + data.tracks.items[0].album.name);
     });
+}
 
 //Bands in Town
 
