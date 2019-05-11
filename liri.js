@@ -33,16 +33,21 @@ switch(command){
   if (x){
     spotifySong(x);
   }
-  else {spotifySong("Fear the Reaper");
-  }
+  else console.log("Please enter a movie or this just won't work!")
   break;
 
   case "concert-this":
   if (x){
     bandTown(x);
   }
-  else {bandTown("none");
+  else console.log("Please enter a movie or this just won't work!");
+  break;
+
+  case "movie-this":
+  if (x){
+    movieTime(x);
   }
+  else console.log("Please enter a movie or this just won't work!");
   break;
 }
 
@@ -91,31 +96,32 @@ axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=cod
   );
 }
 
-// var movies = process.argv[2];
-// axios.get("http://www.omdbapi.com/?t=" + movies + "&y=&plot=short&apikey=9426f43d").then(
-//         function(response) {
-//           // If the axios was successful...
-//           // Then log the body from the site!
-//           console.log(response.data);
-//         },
-      
-//         function(error) {
-//           if (error.response) {
-//             // The request was made and the server responded with a status code
-//             // that falls out of the range of 2xx
-//             console.log(error.response.data);
-//             console.log(error.response.status);
-//             console.log(error.response.headers);
-//           } else if (error.request) {
-//             // The request was made but no response was received
-//             // `error.request` is an object that comes back with details pertaining to the error that occurred.
-//             console.log(error.request);
-//           } else {
-//             // Something happened in setting up the request that triggered an Error
-//             console.log("Error", error.message);
-//           }
-//           console.log(error.config);
-//         }
-//       );
 
+function movieTime (movies) {
+axios.get("http://www.omdbapi.com/?t=" + movies + "&y=&plot=short&apikey=9426f43d").then(
+        function(response) {
+          // If the axios was successful...
+          // Then log the body from the site!
+          console.log(response.data);
+        },
+      
+        function(error) {
+          if (error.response) {
+            // The request was made and the server responded with a status code
+            // that falls out of the range of 2xx
+            console.log(error.response.data);
+            console.log(error.response.status);
+            console.log(error.response.headers);
+          } else if (error.request) {
+            // The request was made but no response was received
+            // `error.request` is an object that comes back with details pertaining to the error that occurred.
+            console.log(error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.log("Error", error.message);
+          }
+          console.log(error.config);
+        }
+      );
+      }
 
