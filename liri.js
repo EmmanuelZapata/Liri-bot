@@ -12,7 +12,25 @@ var Spotify = require("node-spotify-api");
 // spotify keys
 var spotify = new Spotify(keys.keys.spotify);
 
-var songs = process.argv[2];
+//store input in a variable array
+var nodeArgv = process.argv;
+var x = "";
+//attaches multiple word arguments
+for (var i=3; i<nodeArgv.length; i++){
+  if(i>3 && i<nodeArgv.length){
+    x = x + "+" + nodeArgv[i];
+  } else{
+    x = x + nodeArgv[i];
+  }
+}
+
+//Switch case for different userinput variables.  song, movies, and artist made to command.
+//var song = process.argv[2];
+var command = process.argv[2];
+
+
+
+
 
     spotify.search({ type: 'track', query: songs }, function(err, data) {
     if (err) {
