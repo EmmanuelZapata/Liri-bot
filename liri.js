@@ -33,7 +33,7 @@ switch(command){
   if (x){
     spotifySong(x);
   }
-  else console.log("Please enter a movie or this just won't work!");
+  else spotifySong("The Sign Ace of Base");
   break;
 
   case "concert-this":
