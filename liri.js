@@ -114,6 +114,12 @@ axios.get("http://www.omdbapi.com/?t=" + movies + "&y=&plot=short&apikey=9426f43
           // * Language of the movie.
           // * Plot of the movie.
           // * Actors in the movie.
+        if (movies === "Mr. Nobody"){      
+            console.log("\n-----Here's An Idea-----");
+            console.log("If you haven't watched 'Mr. Nobody,' then you should: http://www.imdb.com/title/tt0485947/");
+            console.log("It's on Netflix!");}
+          
+          else {
           console.log("\n----Movie----");
           console.log("Title Of Movie: " + response.data.Title);
           console.log("Year The Movie Came Out: " + response.data.Year);
@@ -124,26 +130,6 @@ axios.get("http://www.omdbapi.com/?t=" + movies + "&y=&plot=short&apikey=9426f43
           console.log("Plot Of The Movie: " + response.data.Plot);
           console.log("Actors In The Movie: " + response.data.Actors);
         }
-);
       }
-      
-      //   function(error) {
-      //     if (error.response) {
-      //       // The request was made and the server responded with a status code
-      //       // that falls out of the range of 2xx
-      //       console.log(error.response.data);
-      //       console.log(error.response.status);
-      //       console.log(error.response.headers);
-      //     } else if (error.request) {
-      //       // The request was made but no response was received
-      //       // `error.request` is an object that comes back with details pertaining to the error that occurred.
-      //       console.log(error.request);
-      //     } else {
-      //       // Something happened in setting up the request that triggered an Error
-      //       console.log("Error", error.message);
-      //     }
-      //     console.log(error.config);
-      //   }
-      // );
-      // }
-
+)}
+  
