@@ -50,6 +50,9 @@ switch(command){
   else {movieTime("Mr. Nobody");
   }
   break;
+
+  case "do-what-it-says":
+  doWhat("spotify-this-song");
 }
 
 
@@ -138,5 +141,14 @@ axios.get("http://www.omdbapi.com/?t=" + movies + "&y=&plot=short&apikey=9426f43
           console.log("Actors In The Movie: " + response.data.Actors);
         }
       }
-)}
-  
+)};
+
+// Do What It Says
+
+function doWhat(){
+  fs.readFile('random.txt', "utf8", function(error, data) {
+var txt = data.split(',');
+spotifySong(txt[1]);
+});
+}
+
