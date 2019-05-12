@@ -33,14 +33,14 @@ switch(command){
   if (x){
     spotifySong(x);
   }
-  else console.log("Please enter a movie or this just won't work!")
+  else console.log("Please enter a movie or this just won't work!");
   break;
 
   case "concert-this":
   if (x){
     bandTown(x);
   }
-  else console.log("Please enter a movie or this just won't work!");
+  else console.log("Please enter an Artist or this just won't work!");
   break;
 
   case "movie-this":
@@ -76,9 +76,16 @@ axios.get("https://rest.bandsintown.com/artists/" + artist + "/events?app_id=cod
     function(response) {
       // If the axios was successful...
       // Then log the body from the site!
-      console.log(response.data);
-    },
-  
+      //Go through the data by one.
+    var concert = response.data;
+    for (let i = 0; i < 1; i++) {
+        console.log("\n----" + concert[i].lineup[0] + " Concert----");
+        console.log("Name Of Venue: " + concert[i].venue.name);
+        console.log("Name Of The City: " + concert[i].venue.city);
+        console.log("Date Of Concert: " + moment(concert[i].datetime, moment.ISO_8601).format("MM/DD/YYYY"));
+        console.log("--------------------");
+    }
+},
     function(error) {
       if (error.response) {
         // The request was made and the server responded with a status code
